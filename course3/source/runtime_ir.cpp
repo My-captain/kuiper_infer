@@ -51,8 +51,7 @@ namespace kuiper_infer {
                 LOG(ERROR) << "Meet the empty node";
                 continue;
             } else {
-                std::shared_ptr<RuntimeOperator> runtime_operator =
-                        std::make_shared<RuntimeOperator>();
+                std::shared_ptr<RuntimeOperator> runtime_operator = std::make_shared<RuntimeOperator>();
                 // 初始化算子的名称
                 runtime_operator->name = op->name;
                 runtime_operator->type = op->type;
@@ -208,8 +207,7 @@ namespace kuiper_infer {
         for (const auto &[name, attr]: attrs) {
             switch (attr.type) {
                 case 1: {
-                    std::shared_ptr<RuntimeAttribute> runtime_attribute =
-                            std::make_shared<RuntimeAttribute>();
+                    std::shared_ptr<RuntimeAttribute> runtime_attribute = std::make_shared<RuntimeAttribute>();
                     runtime_attribute->type = RuntimeDataType::kTypeFloat32;
                     runtime_attribute->weight_data = attr.data;
                     runtime_attribute->shape = attr.shape;
